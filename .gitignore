@@ -1,0 +1,44 @@
+# ----------------------------------------------------------------------------
+# NOCTIS RESERVE - PORTFOLIO SHOWCASE REPOSITORY CONFIGURATION
+# ----------------------------------------------------------------------------
+# This .gitignore is specifically designed for a public portfolio showcase.
+# It uses an aggressive "ignore everything, allow specific" policy to ensure
+# NO sensitive backend code, credentials, or proprietary business logic 
+# accidentally leaks into the public GitHub repository.
+# ----------------------------------------------------------------------------
+
+# 1. Ignore EVERYTHING in the repository by default
+/*
+
+# 2. Allow PUBLIC-SAFE presentation directories and files
+!/Frontend/
+!/portfolio-assets/
+!.gitignore
+!README.md
+
+# 3. Allow SPECIFIC SAFE backend elements (Domain layer)
+# This allows recruiters/viewers to see C# Clean Architecture styling 
+# without exposing the infrastructure, EF Core migrations, or business logic.
+!/backend/
+/backend/*
+!/backend/src/
+/backend/src/*
+!/backend/src/ObsidianArchitect.Domain/
+# Ensure only C# files are exposed in Domain (blocking bin/obj)
+/backend/src/ObsidianArchitect.Domain/bin/
+/backend/src/ObsidianArchitect.Domain/obj/
+!/backend/src/ObsidianArchitect.Domain/**/*.cs
+!/backend/src/ObsidianArchitect.Domain/*.csproj
+
+# 4. EXPLICITLY DENY ANY SENSITIVE FILES OR FOLDERS
+*.json
+*.sql
+*.binlog
+*.txt
+*.old
+.env
+.idea/
+.vs/
+*.user
+*.suo
+node_modules/
