@@ -1,0 +1,11 @@
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\bin\Debug\net9.0\ObsidianArchitect.Domain.deps.json
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\bin\Debug\net9.0\ObsidianArchitect.Domain.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\bin\Debug\net9.0\ObsidianArchitect.Domain.pdb
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ObsidianArchitect.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ObsidianArchitect.Domain.AssemblyInfoInputs.cache
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ObsidianArchitect.Domain.AssemblyInfo.cs
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ObsidianArchitect.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ObsidianArchitect.Domain.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\refint\ObsidianArchitect.Domain.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ObsidianArchitect.Domain.pdb
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Domain\obj\Debug\net9.0\ref\ObsidianArchitect.Domain.dll

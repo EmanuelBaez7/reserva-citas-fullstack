@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Architect | Premium Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "on-primary": "#2d3133",
+                        "inverse-on-surface": "#2a3043",
+                        "surface-container-low": "#151b2d",
+                        "on-secondary-container": "#abb9d2",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-bright": "#33394c",
+                        "surface": "#0c1324",
+                        "on-surface": "#dce1fb",
+                        "on-primary-fixed": "#191c1e",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#07006c",
+                        "error": "#ffb4ab",
+                        "primary": "#c4c7c9",
+                        "surface-variant": "#2e3447",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "on-surface-variant": "#c6c6cd",
+                        "on-tertiary": "#1000a9",
+                        "inverse-surface": "#dce1fb",
+                        "on-background": "#dce1fb",
+                        "on-secondary": "#233144",
+                        "on-primary-container": "#7e8183",
+                        "outline-variant": "#45464d",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "secondary": "#b9c7e0",
+                        "surface-container-high": "#23293c",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-container-highest": "#2e3447",
+                        "surface-dim": "#0c1324",
+                        "outline": "#909097",
+                        "surface-container-lowest": "#070d1f",
+                        "on-tertiary-container": "#6d70fb",
+                        "primary-fixed": "#e0e3e5",
+                        "primary-container": "#15181a",
+                        "surface-container": "#191f31",
+                        "tertiary-fixed": "#e1e0ff",
+                        "background": "#0c1324",
+                        "secondary-container": "#3c4a5e",
+                        "inverse-primary": "#5c5f61",
+                        "on-primary-fixed-variant": "#444749",
+                        "secondary-fixed": "#d5e3fd",
+                        "surface-tint": "#c4c7c9",
+                        "primary-fixed-dim": "#c4c7c9",
+                        "tertiary-container": "#050060",
+                        "tertiary": "#c0c1ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(46, 52, 71, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen">
+<!-- Shell Suppression: This is a task-focused "Booking Flow" sub-page, so global nav is omitted to prioritize the focused journey. -->
+<main class="max-w-6xl mx-auto px-6 py-12 md:py-20">
+<!-- Header & Progress Stepper -->
+<header class="mb-12">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-2">Configure Session</h1>
+<p class="text-on-surface-variant font-label tracking-wide">Step 2 of 4: Select Appointment Time</p>
+</div>
+<button class="bg-surface-container-high text-on-surface p-3 rounded-full hover:bg-surface-bright transition-all active:scale-95">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Stepper Component -->
+<div class="flex items-center gap-4">
+<div class="flex-1 h-1.5 rounded-full bg-primary-container relative overflow-hidden">
+<div class="absolute inset-0 bg-primary w-full"></div>
+</div>
+<div class="flex-1 h-1.5 rounded-full bg-primary-container relative overflow-hidden">
+<div class="absolute inset-0 bg-primary w-1/2"></div>
+</div>
+<div class="flex-1 h-1.5 rounded-full bg-primary-container"></div>
+<div class="flex-1 h-1.5 rounded-full bg-primary-container"></div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Main Interaction Canvas (Bento Grid) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Step 1: Date Selection (Horizontal Scroll Cards) -->
+<section class="space-y-4">
+<div class="flex justify-between items-center">
+<h2 class="font-headline text-xl font-bold">Select Date</h2>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">November 2024</span>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Date Card: Unavailable -->
+<div class="min-w-[100px] flex flex-col items-center p-4 rounded-lg bg-surface-container-low opacity-40 cursor-not-allowed">
+<span class="text-xs font-label text-on-surface-variant">MON</span>
+<span class="text-2xl font-headline font-bold">11</span>
+<span class="text-[10px] mt-2 font-label uppercase text-error">Fully Booked</span>
+</div>
+<!-- Date Card: Available -->
+<div class="min-w-[100px] flex flex-col items-center p-4 rounded-lg bg-surface-container border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<span class="text-xs font-label text-on-surface-variant">TUE</span>
+<span class="text-2xl font-headline font-bold">12</span>
+<span class="text-[10px] mt-2 font-label uppercase text-on-surface-variant group-hover:text-primary">8 Slots</span>
+</div>
+<!-- Date Card: Active/Selected -->
+<div class="min-w-[100px] flex flex-col items-center p-4 rounded-lg bg-primary text-on-primary shadow-[0_0_20px_rgba(196,199,201,0.3)] transition-all cursor-pointer">
+<span class="text-xs font-label opacity-80">WED</span>
+<span class="text-2xl font-headline font-bold">13</span>
+<span class="text-[10px] mt-2 font-label uppercase font-bold tracking-wider">Selected</span>
+</div>
+<!-- Date Card: Limited -->
+<div class="min-w-[100px] flex flex-col items-center p-4 rounded-lg bg-surface-container border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<span class="text-xs font-label text-on-surface-variant">THU</span>
+<span class="text-2xl font-headline font-bold">14</span>
+<span class="text-[10px] mt-2 font-label uppercase text-tertiary">Limited</span>
+</div>
+<!-- Date Card: Available -->
+<div class="min-w-[100px] flex flex-col items-center p-4 rounded-lg bg-surface-container border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<span class="text-xs font-label text-on-surface-variant">FRI</span>
+<span class="text-2xl font-headline font-bold">15</span>
+<span class="text-[10px] mt-2 font-label uppercase text-on-surface-variant group-hover:text-primary">12 Slots</span>
+</div>
+<!-- Date Card: Available -->
+<div class="min-w-[100px] flex flex-col items-center p-4 rounded-lg bg-surface-container border border-outline-variant hover:border-primary transition-all cursor-pointer group">
+<span class="text-xs font-label text-on-surface-variant">SAT</span>
+<span class="text-2xl font-headline font-bold">16</span>
+<span class="text-[10px] mt-2 font-label uppercase text-on-surface-variant group-hover:text-primary">4 Slots</span>
+</div>
+</div>
+</section>
+<!-- Immersive Glass Scheduling Grid -->
+<section class="glass-panel p-8 rounded-xl shadow-2xl relative overflow-hidden border border-outline-variant/10">
+<div class="absolute top-0 right-0 p-8 opacity-5">
+<span class="material-symbols-outlined text-9xl">schedule</span>
+</div>
+<!-- Step 2: Shift Segments -->
+<div class="flex gap-2 mb-10 p-1 bg-surface-container-lowest rounded-full w-fit">
+<button class="px-6 py-2 rounded-full text-sm font-label font-bold bg-secondary-container text-on-secondary-container transition-all">Morning</button>
+<button class="px-6 py-2 rounded-full text-sm font-label text-on-surface-variant hover:text-on-surface transition-all">Afternoon</button>
+<button class="px-6 py-2 rounded-full text-sm font-label text-on-surface-variant hover:text-on-surface transition-all">Evening</button>
+</div>
+<!-- Step 3: Time Slot Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Slot: Selected -->
+<button class="group flex flex-col items-start p-4 rounded-lg bg-primary text-on-primary ring-2 ring-primary ring-offset-4 ring-offset-surface transition-all">
+<span class="text-lg font-headline font-bold">08:00</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest mt-1 opacity-70">Selected</span>
+</button>
+<!-- Slot: Available -->
+<button class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all border border-transparent hover:border-outline-variant">
+<span class="text-lg font-headline font-bold">08:30</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-on-surface-variant">Available</span>
+</button>
+<!-- Slot: Blocked -->
+<div class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-lowest opacity-40 cursor-not-allowed">
+<span class="text-lg font-headline font-bold">09:00</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-error">Reserved</span>
+</div>
+<!-- Slot: Available -->
+<button class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all border border-transparent hover:border-outline-variant">
+<span class="text-lg font-headline font-bold">09:30</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-on-surface-variant">Available</span>
+</button>
+<!-- Slot: Available -->
+<button class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all border border-transparent hover:border-outline-variant">
+<span class="text-lg font-headline font-bold">10:00</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-on-surface-variant">Available</span>
+</button>
+<!-- Slot: Limited -->
+<button class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all border border-tertiary-container/30">
+<span class="text-lg font-headline font-bold">10:30</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-tertiary">1 Left</span>
+</button>
+<!-- Slot: Available -->
+<button class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all border border-transparent hover:border-outline-variant">
+<span class="text-lg font-headline font-bold">11:00</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-on-surface-variant">Available</span>
+</button>
+<!-- Slot: Blocked -->
+<div class="group flex flex-col items-start p-4 rounded-lg bg-surface-container-lowest opacity-40 cursor-not-allowed">
+<span class="text-lg font-headline font-bold">11:30</span>
+<span class="text-[10px] font-label uppercase tracking-widest mt-1 text-error">Busy</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Summary Sidebar / Step 4: Review -->
+<aside class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-lg shadow-xl border border-outline-variant/5">
+<h3 class="font-headline text-lg font-bold mb-6">Booking Summary</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="modern minimalist office with charcoal walls and large window overlooking city skyline during twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBTWy-4IUP-FyPqAw9wwHxaLWrL4rBnIDsb17JI_64Npmmhj_0guHLd_JD5cgJ7qS8jp-qO9dlmIpfkt-TAhyapCtn6593hZy_-pmUvNg2FHQTEkJxzVl4MJUciMa8ElDi6HjW_L80Us478O5A1tZXkLXueGWMxkFPRMZ7JGxnJ_6cfk1Y2vWylJVyNowDsCccmwi2kdxej6qn4evsBK_YjoIGC1HBEm4ayBrjbmY4MYoUyz_NU5p5sQj6HG69MeYo3Jl1M_6zx8"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Architectural Strategy</p>
+<p class="text-xs text-on-surface-variant font-label">Consultation Session • 90m</p>
+</div>
+</div>
+<div class="space-y-4 pt-6 border-t border-outline-variant/10">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">calendar_month</span>
+<span class="text-sm font-label text-on-surface-variant">Date</span>
+</div>
+<span class="text-sm font-bold font-headline">Nov 13, 2024</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+<span class="text-sm font-label text-on-surface-variant">Time</span>
+</div>
+<span class="text-sm font-bold font-headline">08:00 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<span class="text-sm font-label text-on-surface-variant">Location</span>
+</div>
+<span class="text-sm font-bold font-headline">The Obsidian Hub</span>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/10 space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-sm font-label text-on-surface-variant">Service Fee</span>
+<span class="text-sm font-body">$250.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-label text-on-surface-variant">Processing</span>
+<span class="text-sm font-body">$12.50</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="text-base font-headline font-extrabold">Total Due</span>
+<span class="text-xl font-headline font-black text-on-surface">$262.50</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-4 rounded-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-extrabold tracking-tight hover:shadow-[0_0_20px_rgba(196,199,201,0.2)] active:scale-[0.98] transition-all">
+                        Confirm &amp; Continue
+                    </button>
+<p class="text-[10px] text-center mt-4 text-on-surface-variant font-label uppercase tracking-widest">
+                        Secure 256-bit Encrypted Checkout
+                    </p>
+</div>
+<!-- Secondary Info Card -->
+<div class="bg-tertiary-container/20 p-6 rounded-lg border border-tertiary-container/30">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-tertiary">info</span>
+<h4 class="font-headline font-bold text-tertiary text-sm">Rescheduling Policy</h4>
+</div>
+<p class="text-xs text-on-secondary-container leading-relaxed">
+                        Free rescheduling is available up to 24 hours before your session. Cancellations within 24 hours are subject to a 50% retainer fee.
+                    </p>
+</div>
+</aside></div>
+<!-- Success Toast (Example for Loading/Success States) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-surface-container-highest px-6 py-4 rounded-full shadow-2xl border border-outline-variant/20 invisible md:visible opacity-0 pointer-events-none">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-sm font-label font-medium">Validating slot availability...</span>
+</div>
+</main>
+<!-- Refined Footer Suppression: Focused journey priority -->
+</body></html>

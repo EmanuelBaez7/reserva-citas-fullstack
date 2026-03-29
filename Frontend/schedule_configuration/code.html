@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schedule Configuration | Obsidian Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#c0c1ff",
+              "on-primary": "#2d3133",
+              "inverse-on-surface": "#2a3043",
+              "surface-container-low": "#151b2d",
+              "on-secondary-container": "#abb9d2",
+              "on-error-container": "#ffdad6",
+              "on-error": "#690005",
+              "surface-bright": "#33394c",
+              "surface": "#0c1324",
+              "on-surface": "#dce1fb",
+              "on-primary-fixed": "#191c1e",
+              "on-tertiary-fixed-variant": "#2f2ebe",
+              "error-container": "#93000a",
+              "on-tertiary-fixed": "#07006c",
+              "error": "#ffb4ab",
+              "primary": "#c4c7c9",
+              "surface-variant": "#2e3447",
+              "on-secondary-fixed-variant": "#3a485c",
+              "on-surface-variant": "#c6c6cd",
+              "on-tertiary": "#1000a9",
+              "inverse-surface": "#dce1fb",
+              "on-background": "#dce1fb",
+              "on-secondary": "#233144",
+              "on-primary-container": "#7e8183",
+              "outline-variant": "#45464d",
+              "on-secondary-fixed": "#0d1c2f",
+              "secondary": "#b9c7e0",
+              "surface-container-high": "#23293c",
+              "secondary-fixed-dim": "#b9c7e0",
+              "surface-container-highest": "#2e3447",
+              "surface-dim": "#0c1324",
+              "outline": "#909097",
+              "surface-container-lowest": "#070d1f",
+              "on-tertiary-container": "#6d70fb",
+              "primary-fixed": "#e0e3e5",
+              "primary-container": "#15181a",
+              "surface-container": "#191f31",
+              "tertiary-fixed": "#e1e0ff",
+              "background": "#0c1324",
+              "secondary-container": "#3c4a5e",
+              "inverse-primary": "#5c5f61",
+              "on-primary-fixed-variant": "#444749",
+              "secondary-fixed": "#d5e3fd",
+              "surface-tint": "#c4c7c9",
+              "primary-fixed-dim": "#c4c7c9",
+              "tertiary-container": "#050060",
+              "tertiary": "#c0c1ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(46, 52, 71, 0.6);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-900/60 backdrop-blur-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] flex justify-between items-center h-16 px-8 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-slate-100 font-headline">Obsidian Architect</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-manrope font-semibold tracking-tight text-slate-400 hover:text-slate-200 transition-colors" href="#">Dashboard</a>
+<a class="font-manrope font-semibold tracking-tight text-slate-100 border-b-2 border-slate-400 pb-1" href="#">Schedule</a>
+<a class="font-manrope font-semibold tracking-tight text-slate-400 hover:text-slate-200 transition-colors" href="#">Clients</a>
+<a class="font-manrope font-semibold tracking-tight text-slate-400 hover:text-slate-200 transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-200 hover:bg-slate-800/50 transition-all duration-200 rounded-lg active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-200 hover:bg-slate-800/50 transition-all duration-200 rounded-lg active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User avatar" data-alt="close up professional portrait of a male architect with a modern minimal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwAm46i-E0N8IO-2rvkrmEWmc5uNsLp1kZNjmqdOEjyYNGe1RYfjizft1Vk5M-_WGBdCrplK0GTdpMQKvB7_vtxL1jPRhFcA2dkbDf8hPRelukf7EJHJPUJ7nKudwu-rgJDev4u5PoZtp38be1Fi9wNpSOzu9aPhklBpP73ysPvodT0--VGU0Z4B0knkOCOS2D5rEsgt5S1__IvDKv1JupiZmPiuGvXnFBnWXRDrlXAV9QP1o09Wqvp5lnYIfO8SO2PeplYjIyE5U"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-slate-900/80 backdrop-blur-2xl shadow-2xl flex flex-col p-4 gap-2 hidden lg:flex">
+<div class="pt-20 pb-8 px-4">
+<h2 class="text-lg font-black text-slate-100 font-headline">Obsidian Admin</h2>
+<p class="text-xs font-medium text-slate-400">Premium Tier</p>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium bg-slate-800/60 text-slate-100 rounded-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">calendar_today</span> Calendar
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">event_note</span> Appointments
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">group</span> Customers
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">badge</span> Staff
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">insert_chart</span> Reports
+            </a>
+</nav>
+<button class="mt-4 mb-8 bg-gradient-to-br from-primary to-secondary text-on-primary px-4 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined">add</span> New Booking
+        </button>
+<div class="flex flex-col gap-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">help</span> Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 font-manrope text-sm font-medium text-slate-400 hover:bg-slate-800/30 rounded-xl transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">logout</span> Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 px-6 pb-12 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="text-tertiary font-label text-sm font-semibold tracking-widest uppercase">Configuration</span>
+<h1 class="text-4xl md:text-5xl font-black font-headline text-on-surface tracking-tighter mt-2">Schedule Engine</h1>
+<p class="text-on-surface-variant mt-2 max-w-lg">Orchestrate your operational rhythm with granular control over availability, capacity, and session flows.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 rounded-DEFAULT font-semibold text-on-surface-variant bg-surface-container-high hover:bg-surface-bright transition-all active:scale-95">Revert changes</button>
+<button class="px-8 py-3 rounded-DEFAULT font-semibold text-on-primary bg-gradient-to-r from-primary to-primary-container shadow-xl hover:shadow-primary/10 transition-all active:scale-95">Deploy Schedule</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- General Settings Card -->
+<div class="md:col-span-7 bg-surface-container-low rounded-lg p-8 shadow-sm">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<h3 class="text-xl font-bold font-headline">General Flow</h3>
+</div>
+<div class="space-y-8">
+<!-- Appointment Duration -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<label class="font-semibold text-on-surface">Appointment Duration</label>
+<span class="text-xs text-on-surface-variant bg-surface-container px-2 py-1 rounded">Standardized</span>
+</div>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border-none rounded-DEFAULT py-4 px-5 text-on-surface focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>30 Minutes</option>
+<option selected="">45 Minutes</option>
+<option>60 Minutes</option>
+<option>90 Minutes</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+<p class="text-sm text-on-surface-variant">Sets the base unit for all newly scheduled bookings across the dashboard.</p>
+</div>
+<!-- Buffer Time Segmented Control -->
+<div class="space-y-3">
+<label class="font-semibold text-on-surface">Transit Buffer</label>
+<div class="flex p-1 bg-surface-container-lowest rounded-xl">
+<button class="flex-1 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface">None</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-lg transition-all bg-secondary-container text-on-surface shadow-sm">5 Min</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface">10 Min</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-lg transition-all text-on-surface-variant hover:text-on-surface">15 Min</button>
+</div>
+<p class="text-sm text-on-surface-variant italic">Required cool-down period between consecutive appointments.</p>
+</div>
+</div>
+</div>
+<!-- Capacity Card -->
+<div class="md:col-span-5 bg-surface-container rounded-lg p-8 border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h3 class="text-xl font-bold font-headline">Capacity &amp; Scaling</h3>
+</div>
+<div class="space-y-8">
+<!-- Number of Stations -->
+<div class="space-y-3">
+<label class="font-semibold text-on-surface">Active Stations</label>
+<div class="flex items-center gap-4">
+<div class="flex-1 bg-surface-container-lowest rounded-DEFAULT flex items-center px-4 py-3">
+<input class="bg-transparent border-none text-xl font-bold w-full focus:ring-0 text-primary" type="number" value="12"/>
+<div class="flex flex-col gap-1">
+<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined !text-lg">keyboard_arrow_up</span></button>
+<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined !text-lg">keyboard_arrow_down</span></button>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant/20 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">hub</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant">Concurrent appointment slots available per time-block.</p>
+</div>
+<!-- Auto-Scaling Toggle -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<div>
+<p class="font-semibold text-on-surface">Dynamic Scaling</p>
+<p class="text-xs text-on-surface-variant">Allow overbooking for waitlist</p>
+</div>
+<button class="w-12 h-6 bg-primary-container rounded-full relative transition-all">
+<span class="absolute right-1 top-1 w-4 h-4 bg-primary rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Calendar Multi-select Section -->
+<div class="md:col-span-8 glass-panel rounded-lg p-8">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-bright flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<h3 class="text-xl font-bold font-headline">Operational Window</h3>
+</div>
+<div class="flex bg-surface-container-lowest rounded-full px-2 py-1 text-xs font-semibold">
+<button class="px-3 py-1 bg-surface-variant rounded-full text-on-surface">Month</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-on-surface">Quarter</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 mb-4">
+<div class="text-center text-xs font-bold text-outline py-2 uppercase tracking-tighter">Mon</div>
+<div class="text-center text-xs font-bold text-outline py-2 uppercase tracking-tighter">Tue</div>
+<div class="text-center text-xs font-bold text-outline py-2 uppercase tracking-tighter">Wed</div>
+<div class="text-center text-xs font-bold text-outline py-2 uppercase tracking-tighter">Thu</div>
+<div class="text-center text-xs font-bold text-outline py-2 uppercase tracking-tighter">Fri</div>
+<div class="text-center text-xs font-bold text-primary py-2 uppercase tracking-tighter">Sat</div>
+<div class="text-center text-xs font-bold text-primary py-2 uppercase tracking-tighter">Sun</div>
+<!-- Calendar Days Mockup -->
+<div class="aspect-square bg-surface-container-lowest/50 rounded-lg flex items-center justify-center text-on-surface-variant opacity-30 text-sm">28</div>
+<div class="aspect-square bg-surface-container-lowest/50 rounded-lg flex items-center justify-center text-on-surface-variant opacity-30 text-sm">29</div>
+<div class="aspect-square bg-surface-container-lowest/50 rounded-lg flex items-center justify-center text-on-surface-variant opacity-30 text-sm">30</div>
+<div class="aspect-square bg-surface-container-lowest/50 rounded-lg flex items-center justify-center text-on-surface-variant opacity-30 text-sm">31</div>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">1</button>
+<button class="aspect-square bg-primary-container rounded-lg flex items-center justify-center text-primary text-sm font-bold ring-2 ring-primary transition-all">2</button>
+<button class="aspect-square bg-primary-container rounded-lg flex items-center justify-center text-primary text-sm font-bold ring-2 ring-primary transition-all">3</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">4</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">5</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">6</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">7</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">8</button>
+<button class="aspect-square bg-primary-container rounded-lg flex items-center justify-center text-primary text-sm font-bold ring-2 ring-primary transition-all">9</button>
+<button class="aspect-square bg-primary-container rounded-lg flex items-center justify-center text-primary text-sm font-bold ring-2 ring-primary transition-all">10</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">11</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">12</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">13</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">14</button>
+<button class="aspect-square bg-surface-container-high rounded-lg flex items-center justify-center text-on-surface text-sm hover:ring-2 ring-primary/40 transition-all">15</button>
+<button class="aspect-square bg-primary-container rounded-lg flex items-center justify-center text-primary text-sm font-bold ring-2 ring-primary transition-all">16</button>
+<button class="aspect-square bg-primary-container rounded-lg flex items-center justify-center text-primary text-sm font-bold ring-2 ring-primary transition-all">17</button>
+</div>
+<div class="flex items-center gap-6 mt-6 pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-primary-container ring-1 ring-primary"></div>
+<span class="text-xs text-on-surface-variant font-medium">Enabled Booking</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-surface-container-high"></div>
+<span class="text-xs text-on-surface-variant font-medium">Restricted</span>
+</div>
+<div class="ml-auto text-xs font-semibold text-tertiary">Select dates to toggle availability</div>
+</div>
+</div>
+<!-- Shift Toggles Card -->
+<div class="md:col-span-4 bg-surface-container-low rounded-lg p-8 border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<h3 class="text-xl font-bold font-headline">Shift Blocks</h3>
+</div>
+<div class="space-y-4">
+<!-- Morning Shift -->
+<div class="p-5 bg-surface-container rounded-xl border border-outline-variant/10 group hover:border-primary/30 transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-400">light_mode</span>
+<span class="font-bold text-on-surface">Morning</span>
+</div>
+<div class="w-10 h-5 bg-tertiary rounded-full relative">
+<span class="absolute right-1 top-1 w-3 h-3 bg-surface rounded-full"></span>
+</div>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant font-medium">
+<span>08:00 AM</span>
+<span class="material-symbols-outlined !text-sm">arrow_forward</span>
+<span>12:00 PM</span>
+</div>
+</div>
+<!-- Afternoon Shift -->
+<div class="p-5 bg-surface-container rounded-xl border border-outline-variant/10 group hover:border-primary/30 transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400">wb_twilight</span>
+<span class="font-bold text-on-surface">Afternoon</span>
+</div>
+<div class="w-10 h-5 bg-tertiary rounded-full relative">
+<span class="absolute right-1 top-1 w-3 h-3 bg-surface rounded-full"></span>
+</div>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant font-medium">
+<span>01:00 PM</span>
+<span class="material-symbols-outlined !text-sm">arrow_forward</span>
+<span>05:00 PM</span>
+</div>
+</div>
+<!-- Evening Shift -->
+<div class="p-5 bg-surface-container-lowest rounded-xl border border-outline-variant/5 opacity-50">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-indigo-400">dark_mode</span>
+<span class="font-bold text-on-surface">Evening</span>
+</div>
+<div class="w-10 h-5 bg-surface-container-high rounded-full relative">
+<span class="absolute left-1 top-1 w-3 h-3 bg-on-surface-variant/30 rounded-full"></span>
+</div>
+</div>
+<div class="flex justify-between text-xs text-on-surface-variant font-medium">
+<span>06:00 PM</span>
+<span class="material-symbols-outlined !text-sm">arrow_forward</span>
+<span>10:00 PM</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-dashed border-outline-variant rounded-xl text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all">
+                        + Custom Shift Logic
+                    </button>
+</div>
+</div>
+<!-- Footer Help/Validation -->
+<div class="mt-12 p-6 bg-primary-container/30 border border-primary/10 rounded-lg flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<div>
+<h4 class="font-bold text-primary">Live Validation Active</h4>
+<p class="text-sm text-on-primary-container mt-1">Your current station count (12) exceeds the standard recommended load for Morning shifts. Analytics suggest a potential bottleneck at 10:30 AM. <a class="underline font-semibold decoration-primary/30" href="#">View Analysis</a></p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-3xl px-6 py-3 flex justify-around items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="text-[10px] font-bold">Schedule</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold">Clients</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Admin</span>
+</a>
+</nav>
+</body></html>

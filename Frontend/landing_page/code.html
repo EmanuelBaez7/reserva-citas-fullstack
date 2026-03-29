@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Architect | Appointment Booking Reimagined</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "on-primary": "#2d3133",
+                        "inverse-on-surface": "#2a3043",
+                        "surface-container-low": "#151b2d",
+                        "on-secondary-container": "#abb9d2",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-bright": "#33394c",
+                        "surface": "#0c1324",
+                        "on-surface": "#dce1fb",
+                        "on-primary-fixed": "#191c1e",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#07006c",
+                        "error": "#ffb4ab",
+                        "primary": "#c4c7c9",
+                        "surface-variant": "#2e3447",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "on-surface-variant": "#c6c6cd",
+                        "on-tertiary": "#1000a9",
+                        "inverse-surface": "#dce1fb",
+                        "on-background": "#dce1fb",
+                        "on-secondary": "#233144",
+                        "on-primary-container": "#7e8183",
+                        "outline-variant": "#45464d",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "secondary": "#b9c7e0",
+                        "surface-container-high": "#23293c",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-container-highest": "#2e3447",
+                        "surface-dim": "#0c1324",
+                        "outline": "#909097",
+                        "surface-container-lowest": "#070d1f",
+                        "on-tertiary-container": "#6d70fb",
+                        "primary-fixed": "#e0e3e5",
+                        "primary-container": "#15181a",
+                        "surface-container": "#191f31",
+                        "tertiary-fixed": "#e1e0ff",
+                        "background": "#0c1324",
+                        "secondary-container": "#3c4a5e",
+                        "inverse-primary": "#5c5f61",
+                        "on-primary-fixed-variant": "#444749",
+                        "secondary-fixed": "#d5e3fd",
+                        "surface-tint": "#c4c7c9",
+                        "primary-fixed-dim": "#c4c7c9",
+                        "tertiary-container": "#050060",
+                        "tertiary": "#c0c1ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(46, 52, 71, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .text-gradient {
+            background: linear-gradient(to bottom right, #c4c7c9, #7e8183);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(196, 199, 201, 0.15) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-slate-900/60 backdrop-blur-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center h-16 px-8 w-full max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-100 font-manrope">
+                Obsidian Architect
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-100 border-b-2 border-slate-400 pb-1 font-manrope font-semibold tracking-tight transition-colors" href="#">Dashboard</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-manrope font-semibold tracking-tight" href="#">Schedule</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-manrope font-semibold tracking-tight" href="#">Clients</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-manrope font-semibold tracking-tight" href="#">Analytics</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-800/50 transition-all duration-200 p-2 rounded-xl active:scale-95">
+<span class="material-symbols-outlined text-slate-200">notifications</span>
+</button>
+<button class="hover:bg-slate-800/50 transition-all duration-200 p-2 rounded-xl active:scale-95">
+<span class="material-symbols-outlined text-slate-200">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden border border-outline-variant/20">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man in high-end office lighting with soft shadows and sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDyI-T2S9AmPmAkheCrPiKZUXGVIhxCoezyc88qTRlJRKTScT73opCxqXywKann3-ln7HCU7BcwRSY0cSV41vJIlcQoG7kP9p0ThbJZxwsEszqsGyf--Khp-JiUK90LsTG3isoTnQh2td9jCo7yvnfWpXsJtHgTVZNTeKCoJdmyHFKnStjWLKLHZ4rb4qPAvjz67xquOrhFgCU1kA8ChF2U6CYSjC_XgXYMT65EHYlqrWIay_rsX-WCSWxRVlSDLmBdOtemek4zTg"/>
+</div>
+</div>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden hero-glow">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#45464d 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="max-w-4xl w-full glass-panel p-12 md:p-20 rounded-xl border border-white/5 shadow-2xl relative z-10 text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-lowest/50 border border-outline-variant/20 mb-8">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold">New Release 2.0</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-6 leading-[1.1]">
+                    Obsidian Architect: <span class="text-gradient">Appointment Booking Reimagined.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Efficiency, clarity, and beauty. A premium scheduling platform for high-performance teams that value time as their most precious resource.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-secondary text-on-primary font-bold rounded shadow-[0_0_20px_rgba(196,199,201,0.2)] hover:shadow-[0_0_30px_rgba(196,199,201,0.4)] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2">
+                        Book Appointment
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="px-8 py-4 bg-surface-container-highest/40 backdrop-blur-sm border border-outline-variant/30 text-on-surface font-bold rounded hover:bg-surface-container-highest/60 transition-all active:scale-[0.98]">
+                        Sign In
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Highlights -->
+<section class="py-32 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[240px]">
+<!-- Main Highlight -->
+<div class="md:col-span-8 md:row-span-2 bg-surface-container-low rounded-xl p-10 flex flex-col justify-end relative overflow-hidden group">
+<img alt="Calendar View" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract cinematic visualization of a digital calendar grid with soft blue glowing highlights and clean minimalist layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmQuPWGwfflCnozs093mfDyQ2-4uzosyTnclWLychclWtmefDzD4VYPLg8WeHAnbDOZ8vjDxuG-FhRN23boiQMaEYnFe3cEJw_ZinrJK1ILTUbOKMqiocz-A5BwpbIvsBgvRVMUezj5ZyIWhIEGwkQK427eAbay_nXVETk4Jrwy2I_Ec_vN1WF6psyrHsFk7kLZL_KEsVEXuiJ-4KdRODzuSIV4SlxcVTxbKsNAdnZS4ldH3wl21TpDcz1-3nck5yGb-udhkdXV-c"/>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">calendar_today</span>
+<h3 class="text-3xl font-headline font-bold mb-2">Available schedules</h3>
+<p class="text-on-surface-variant max-w-md">Real-time synchronization across all your devices with millisecond precision.</p>
+</div>
+</div>
+<!-- Secondary Highlights -->
+<div class="md:col-span-4 bg-surface-container-highest rounded-xl p-8 flex flex-col justify-between border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary text-3xl">bolt</span>
+<div>
+<h4 class="text-xl font-headline font-bold mb-1">Fast booking</h4>
+<p class="text-sm text-on-surface-variant">The fastest scheduling engine ever built for the modern web.</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary text-3xl">mail</span>
+<div>
+<h4 class="text-xl font-headline font-bold mb-1">Email confirmation</h4>
+<p class="text-sm text-on-surface-variant">Automated white-label notifications that match your brand identity.</p>
+</div>
+</div>
+<!-- Small Highlight -->
+<div class="md:col-span-12 lg:col-span-4 bg-gradient-to-br from-surface-container to-surface-container-low rounded-xl p-8 flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-1">Capacity control</h4>
+<p class="text-sm text-on-surface-variant">Smart load balancing for high-traffic clinics and studios.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-32 bg-surface-container-lowest relative">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-4">How it works</h2>
+<p class="text-on-surface-variant">Experience the simplicity of professional orchestration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-8 relative group-hover:bg-primary transition-colors duration-300">
+<span class="text-2xl font-black text-primary group-hover:text-on-primary">01</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">calendar_month</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Select a Date</h3>
+<p class="text-on-surface-variant leading-relaxed">Choose from the available dates on our interactive architectural calendar.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-8 relative group-hover:bg-primary transition-colors duration-300">
+<span class="text-2xl font-black text-primary group-hover:text-on-primary">02</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">schedule</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Pick a Shift</h3>
+<p class="text-on-surface-variant leading-relaxed">Browse through morning, afternoon, or evening blocks tailored to your rhythm.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center mb-8 relative group-hover:bg-primary transition-colors duration-300">
+<span class="text-2xl font-black text-primary group-hover:text-on-primary">03</span>
+<div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">done_all</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Confirm</h3>
+<p class="text-on-surface-variant leading-relaxed">Review your details and finalize your booking with a single tactile click.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA / Stripe Style Section -->
+<section class="py-40 px-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+<div class="max-w-5xl mx-auto bg-surface-container p-16 rounded-xl border border-outline-variant/10 text-center relative z-10">
+<h2 class="text-4xl md:text-6xl font-headline font-extrabold mb-8">Ready to transform your scheduling?</h2>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="px-12 py-5 bg-on-surface text-surface font-black rounded shadow-xl hover:scale-105 transition-transform">Get Started Free</button>
+<button class="px-12 py-5 border border-outline text-on-surface font-bold rounded hover:bg-surface-container-high transition-colors">Talk to Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest pt-24 pb-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-20">
+<div class="col-span-2">
+<div class="text-lg font-black text-slate-100 mb-6 font-manrope">Obsidian Architect</div>
+<p class="text-on-surface-variant text-sm max-w-xs leading-relaxed">
+                        Redefining the digital workspace for high-performing individuals and teams. Premium tools for the modern age.
+                    </p>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Product</h5>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Features</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Integrations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Changelog</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Company</h5>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">About</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Legal</h5>
+<ul class="space-y-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Social</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-sm text-on-surface-variant">© 2024 Obsidian Architect. All rights reserved.</p>
+<div class="flex items-center gap-6 text-xs text-on-surface-variant uppercase tracking-widest font-bold">
+<span>English (US)</span>
+<span>Status: Operational</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

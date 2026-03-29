@@ -1,0 +1,15 @@
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\bin\Debug\net9.0\ObsidianArchitect.Application.deps.json
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\bin\Debug\net9.0\ObsidianArchitect.Application.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\bin\Debug\net9.0\ObsidianArchitect.Application.pdb
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\bin\Debug\net9.0\ObsidianArchitect.Domain.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\bin\Debug\net9.0\ObsidianArchitect.Domain.pdb
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.csproj.AssemblyReference.cache
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.AssemblyInfoInputs.cache
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.AssemblyInfo.cs
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.csproj.CoreCompileInputs.cache
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\Obsidian.ACB6E699.Up2Date
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\refint\ObsidianArchitect.Application.dll
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ObsidianArchitect.Application.pdb
+C:\Users\ELFATHER\Downloads\ReservaCitas\backend\src\ObsidianArchitect.Application\obj\Debug\net9.0\ref\ObsidianArchitect.Application.dll

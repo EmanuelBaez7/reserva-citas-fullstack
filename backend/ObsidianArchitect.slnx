@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ObsidianArchitect.API/ObsidianArchitect.API.csproj" />
+    <Project Path="src/ObsidianArchitect.Application/ObsidianArchitect.Application.csproj" />
+    <Project Path="src/ObsidianArchitect.Domain/ObsidianArchitect.Domain.csproj" />
+    <Project Path="src/ObsidianArchitect.Infrastructure/ObsidianArchitect.Infrastructure.csproj" />
+  </Folder>
+</Solution>

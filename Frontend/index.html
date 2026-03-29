@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Noctis Reserve — Premium Appointment Scheduling</title>
+    <meta name="description" content="Noctis Reserve is a premium, dark-luxury appointment booking platform engineered for professionals who demand precision, elegance, and control.">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Fonts: Manrope (headlines) + Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind Config — Noctis Reserve Design System -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#b8a4ff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#1a1030",
+                        "surface-container-low": "#0d1225",
+                        "on-secondary-container": "#c8b8f0",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-bright": "#1f1840",
+                        "surface": "#050816",
+                        "on-surface": "#EAEAF7",
+                        "on-primary-fixed": "#0a0520",
+                        "on-tertiary-fixed-variant": "#5B2EFF",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#2B124C",
+                        "error": "#ffb4ab",
+                        "primary": "#8B5CFF",
+                        "surface-variant": "#1a1535",
+                        "on-secondary-fixed-variant": "#3d2878",
+                        "on-surface-variant": "#A9A9C8",
+                        "on-tertiary": "#2B124C",
+                        "inverse-surface": "#EAEAF7",
+                        "on-background": "#EAEAF7",
+                        "on-secondary": "#1a1030",
+                        "on-primary-container": "#c8b8f0",
+                        "outline-variant": "#2a2348",
+                        "on-secondary-fixed": "#0a0520",
+                        "secondary": "#A9A9C8",
+                        "surface-container-high": "#141028",
+                        "secondary-fixed-dim": "#A9A9C8",
+                        "surface-container-highest": "#1a1535",
+                        "surface-dim": "#050816",
+                        "outline": "#6B6B8D",
+                        "surface-container-lowest": "#030510",
+                        "on-tertiary-container": "#b8a4ff",
+                        "primary-fixed": "#c8b8f0",
+                        "primary-container": "#1a0840",
+                        "surface-container": "#0B1020",
+                        "tertiary-fixed": "#ddd5ff",
+                        "background": "#050816",
+                        "secondary-container": "#2a1860",
+                        "inverse-primary": "#5B2EFF",
+                        "on-primary-fixed-variant": "#3d2878",
+                        "secondary-fixed": "#ddd5ff",
+                        "surface-tint": "#8B5CFF",
+                        "primary-fixed-dim": "#8B5CFF",
+                        "tertiary-container": "#2B124C",
+                        "tertiary": "#b8a4ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Shared Design Tokens -->
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-on-surface min-h-screen" style="background:#050816">
+
+    <!-- SPA Mount Point -->
+    <div id="app"></div>
+
+    <!-- Core Infrastructure (load order matters) -->
+    <script src="js/api.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/components.js"></script>
+
+    <!-- Page Modules -->
+    <script src="js/pages/landing.js"></script>
+    <script src="js/pages/login.js"></script>
+    <script src="js/pages/userDashboard.js"></script>
+    <script src="js/pages/booking.js"></script>
+    <script src="js/pages/myAppointments.js"></script>
+    <script src="js/pages/adminDashboard.js"></script>
+    <script src="js/pages/scheduleConfig.js"></script>
+    <script src="js/pages/reservationLogs.js"></script>
+
+    <!-- Route Registration & App Bootstrap -->
+    <script>
+        (async function bootstrap() {
+            // Initialize auth state
+            Auth.init();
+
+            // ─── Register Routes ────────────────────────────────────
+            // Public
+            Router.register('/', {
+                render: () => LandingPage.render(),
+                init: () => LandingPage.init(),
+                guard: null
+            });
+
+            Router.register('/login', {
+                render: () => AuthPage.render(),
+                init: () => AuthPage.init(),
+                guard: () => Router.requireGuest()
+            });
+
+            // User routes
+            Router.register('/dashboard', {
+                render: () => UserDashboardPage.render(),
+                init: () => UserDashboardPage.init(),
+                guard: () => Router.requireAuth()
+            });
+
+            Router.register('/booking', {
+                render: () => BookingPage.render(),
+                init: () => BookingPage.init(),
+                guard: null // Anonymous can browse, auth required to confirm
+            });
+
+            Router.register('/appointments', {
+                render: () => MyAppointmentsPage.render(),
+                init: () => MyAppointmentsPage.init(),
+                guard: () => Router.requireAuth()
+            });
+
+            // Admin routes
+            Router.register('/admin', {
+                render: () => AdminDashboardPage.render(),
+                init: () => AdminDashboardPage.init(),
+                guard: () => Router.requireAdmin()
+            });
+
+            Router.register('/admin/schedule', {
+                render: () => ScheduleConfigPage.render(),
+                init: () => ScheduleConfigPage.init(),
+                guard: () => Router.requireAdmin()
+            });
+
+            Router.register('/admin/logs', {
+                render: () => ReservationLogsPage.render(),
+                init: () => ReservationLogsPage.init(),
+                guard: () => Router.requireAdmin()
+            });
+
+            // ─── Hydrate Auth & Start Router ────────────────────────
+            if (Auth.isAuthenticated()) {
+                await Auth.hydrate();
+            }
+
+            Router.start('#app');
+        })();
+    </script>
+</body>
+</html>
