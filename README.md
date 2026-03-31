@@ -59,11 +59,12 @@ Noctis Reserve encompasses a complete end-to-end reservation lifecycle, demonstr
 
 ### The Authentic Lobby
 > A frictionless, secure entry point.
-<p align="center"><img src="./portfolio-assets/auth-flow.png" alt="Authentication Flow" width="700" onerror="this.style.display='none'"></p>
+<img width="1377" height="919" alt="image" src="https://github.com/user-attachments/assets/dd4a24b0-2834-4433-8464-771e4e7ee71c" />
+
 
 ### The Client Experience
 > Selecting the perfect date, shift, and time slot.
-<p align="center"><img src="./portfolio-assets/booking-flow.png" alt="Booking Modal" width="700" onerror="this.style.display='none'"></p>
+<img width="1207" height="938" alt="image" src="https://github.com/user-attachments/assets/d388226f-6216-4eae-8996-062351bf5338" />
 
 ### The Client Dashboard
 > Tracking upcoming reservations.
@@ -71,7 +72,7 @@ Noctis Reserve encompasses a complete end-to-end reservation lifecycle, demonstr
 
 ### The Admin Command Center
 > Operational oversight and schedule control.
-<p align="center"><img src="./portfolio-assets/admin-panel.png" alt="Admin Dashboard" width="700" onerror="this.style.display='none'"></p>
+<img width="1875" height="967" alt="image" src="https://github.com/user-attachments/assets/010b9829-15fd-4830-8d50-02744f9f9d99" />
 
 ---
 
