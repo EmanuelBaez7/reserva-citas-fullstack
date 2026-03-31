@@ -14,7 +14,7 @@
 
 <br>
 
-<img src="./portfolio-assets/hero-preview.png" alt="Noctis Reserve Landing Page Hero preview" width="800" onerror="this.src='https://via.placeholder.com/800x450/050816/8B5CFF?text=Noctis+Reserve+Hero+Preview'">
+https://noctis-reserve.vercel.app/#/
 
 </div>
 
